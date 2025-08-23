@@ -2,25 +2,23 @@
 
 typedef char String[100];
 
-// searches all instances of the character
-int* linearSearch(char string[], char toSearch) {
+// returns first instance
+int linearSearch(char theString[], char toSearch) {
     int i;
-    int indexCount = 0;
-    int index[100];
 
-    for(i = 0; string[i] != '\0'; i++) {
-        if(string[i] == toSearch) {
-            index[indexCount] = i;
-            indexCount++;
+    for(i = 0; theString[i] != '\0'; i++) {
+        if(theString[i] == toSearch){
+            return i;
         }
     }
 
-    return index;
+        return -1;
 }
 
 int main() {
     String theString;
     char toSearch;
+    int index;
     
 
     std::cout << "--------- character linear search -----------" << std::endl;
@@ -28,7 +26,13 @@ int main() {
     std::cin >> theString;
     std::cout << "string to search: ";
     std::cin >> toSearch;
-    
-    int indexes[100] = linearSearch(theString, toSearch);
 
+    index = linearSearch(theString, toSearch);
+
+    if(index >= 0) {
+        std::cout << "character found at index: " << index << std::endl;
+    }
+    else {
+        std::cout << "character not found on string" << std::endl;
+    }
 }
