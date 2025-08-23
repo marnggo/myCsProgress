@@ -1,13 +1,5 @@
 #include <iostream>
 
-// reccursion
-// parameters: 
-// the string
-// the 
-
-// should I have an indicator (n) so that my
-
-
 // finds first instance
 int binarySearch(int arr[], int low, int high, int toSearch) {
     int mid = (low + high) / 2;
